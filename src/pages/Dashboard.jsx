@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Heading, Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import { Box, Heading, Tabs, TabList, TabPanels, Tab, TabPanel, Icon } from "@chakra-ui/react";
+import { FaHome, FaUsers, FaUserTie, FaCalendarAlt, FaMoneyBillWave } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import CustomerInfo from "../components/CustomerInfo";
 import CleaningManagerInfo from "../components/CleaningManagerInfo";
@@ -20,11 +21,26 @@ const Dashboard = () => {
       <Heading mb={4}>Admin Dashboard</Heading>
       <Tabs>
         <TabList>
-          <Tab>Home</Tab>
-          <Tab>Customer Info</Tab>
-          <Tab>Cleaning Manager Info</Tab>
-          <Tab>Reservation Info</Tab>
-          <Tab>Payment Info</Tab>
+          <Tab>
+            <Icon as={FaHome} mr={2} />
+            Home
+          </Tab>
+          <Tab>
+            <Icon as={FaUsers} mr={2} />
+            Customer Info
+          </Tab>
+          <Tab>
+            <Icon as={FaUserTie} mr={2} />
+            Cleaning Manager Info
+          </Tab>
+          <Tab>
+            <Icon as={FaCalendarAlt} mr={2} />
+            Reservation Info
+          </Tab>
+          <Tab>
+            <Icon as={FaMoneyBillWave} mr={2} />
+            Payment Info
+          </Tab>
         </TabList>
 
         <TabPanels>

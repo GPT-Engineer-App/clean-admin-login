@@ -24,11 +24,13 @@ const Index = () => {
   };
 
   return (
-    <Flex height="100vh" alignItems="center" justifyContent="center">
-      <Box p={8} maxWidth="500px" borderWidth={1} borderRadius={8} boxShadow="lg">
-        <Box textAlign="center">
-          <Image src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxjbGVhbmluZyUyMGNvbXBhbnklMjBsb2dvfGVufDB8fHx8MTcxMzEwMDI0MXww&ixlib=rb-4.0.3&q=80&w=1080" alt="Logo" mb={4} />
-          <Heading>Cleaning Company Admin Login</Heading>
+    <Flex height="100vh" alignItems="center" justifyContent="center" backgroundImage="url('https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')" backgroundSize="cover" backgroundPosition="center">
+      <Box p={8} maxWidth="500px" borderWidth={1} borderRadius={8} boxShadow="lg" bg="white">
+        <Box textAlign="center" mb={8}>
+          <Image src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxjbGVhbmluZyUyMGNvbXBhbnklMjBsb2dvfGVufDB8fHx8MTcxMzEwMDI0MXww&ixlib=rb-4.0.3&q=80&w=1080" alt="Logo" mb={4} borderRadius="full" boxSize="150px" mx="auto" />
+          <Heading size="xl" color="gray.700">
+            Cleaning Company Admin Login
+          </Heading>
         </Box>
         <Box my={4} textAlign="left">
           <form onSubmit={handleLogin}>

@@ -31,7 +31,7 @@ const ReservationInfo = () => {
 
   return (
     <Box>
-      <Table variant="simple">
+      <Table variant="striped" colorScheme="gray">
         <Thead>
           <Tr>
             <Th>고객</Th>

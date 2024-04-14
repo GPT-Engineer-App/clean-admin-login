@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Stat, StatLabel, StatNumber, StatGroup, Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react";
+import { Box, Stat, StatLabel, StatNumber, SimpleGrid, Heading } from "@chakra-ui/react";
 
 const DashboardHome = () => {
   const salesData = [
@@ -13,37 +13,38 @@ const DashboardHome = () => {
 
   return (
     <Box>
-      <StatGroup>
-        <Stat>
-          <StatLabel>Total Sales</StatLabel>
-          <StatNumber>$12,345</StatNumber>
-        </Stat>
-        <Stat>
-          <StatLabel>Monthly Sales</StatLabel>
-          <StatNumber>$5,678</StatNumber>
-        </Stat>
-        <Stat>
-          <StatLabel>New Customers</StatLabel>
-          <StatNumber>50</StatNumber>
-        </Stat>
-      </StatGroup>
-      <Box mt={8}>
-        <Table>
-          <Thead>
-            <Tr>
-              <Th>Month</Th>
-              <Th isNumeric>Sales</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {salesData.map((data, index) => (
-              <Tr key={index}>
-                <Td>{data.month}</Td>
-                <Td isNumeric>${data.sales}</Td>
-              </Tr>
-            ))}
-          </Tbody>
-        </Table>
+      <SimpleGrid columns={3} spacing={10} mb={8}>
+        <Box bg="white" p={6} rounded="lg" boxShadow="md">
+          <Stat>
+            <StatLabel>Total Sales</StatLabel>
+            <StatNumber>$12,345</StatNumber>
+          </Stat>
+        </Box>
+        <Box bg="white" p={6} rounded="lg" boxShadow="md">
+          <Stat>
+            <StatLabel>Monthly Sales</StatLabel>
+            <StatNumber>$5,678</StatNumber>
+          </Stat>
+        </Box>
+        <Box bg="white" p={6} rounded="lg" boxShadow="md">
+          <Stat>
+            <StatLabel>New Customers</StatLabel>
+            <StatNumber>50</StatNumber>
+          </Stat>
+        </Box>
+      </SimpleGrid>
+      <Box bg="white" p={6} rounded="lg" boxShadow="md">
+        <Heading size="lg" mb={4}>
+          Sales Data
+        </Heading>
+        <Box>
+          {salesData.map((data, index) => (
+            <Box key={index} mb={4}>
+              <StatLabel>{data.month}</StatLabel>
+              <StatNumber>${data.sales}</StatNumber>
+            </Box>
+          ))}
+        </Box>
       </Box>
     </Box>
   );
