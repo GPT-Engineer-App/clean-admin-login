@@ -13,6 +13,7 @@ const ReservationInfo = () => {
       serviceType: "House Cleaning",
       estimateSubmitted: true,
       manager: "Manager 1",
+      amount: 100,
     },
     {
       id: 2,
@@ -24,6 +25,7 @@ const ReservationInfo = () => {
       serviceType: "Office Cleaning",
       estimateSubmitted: false,
       manager: "Manager 2",
+      amount: 150,
     },
   ];
 
@@ -40,6 +42,7 @@ const ReservationInfo = () => {
             <Th>서비스 유형</Th>
             <Th>견적 제출</Th>
             <Th>매니저</Th>
+            <Th>금액</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -53,6 +56,7 @@ const ReservationInfo = () => {
               <Td>{reservation.serviceType}</Td>
               <Td>{reservation.estimateSubmitted ? "Yes" : "No"}</Td>
               <Td>{reservation.manager}</Td>
+              <Td>{reservation.amount}</Td>
             </Tr>
           ))}
         </Tbody>
