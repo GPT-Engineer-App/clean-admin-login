@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Box, Flex, Heading, FormControl, FormLabel, Input, Button, useToast, Image } from "@chakra-ui/react";
 
 const Index = () => {
@@ -6,9 +7,12 @@ const Index = () => {
   const [password, setPassword] = useState("");
   const toast = useToast();
 
+  const navigate = useNavigate();
+
   const handleLogin = (e) => {
     e.preventDefault();
-    // TODO: Add login logic here
+
+    localStorage.setItem("isAuthenticated", true);
     toast({
       title: "로그인 성공",
       description: "관리자 페이지로 이동합니다.",
@@ -16,6 +20,7 @@ const Index = () => {
       duration: 3000,
       isClosable: true,
     });
+    navigate("/dashboard");
   };
 
   return (
