@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Table, Thead, Tbody, Tr, Th, Td, Button, Image } from "@chakra-ui/react";
+import { Box, Table, Thead, Tbody, Tr, Th, Td, Button, Image, Flex } from "@chakra-ui/react";
 
 const CleaningManagerInfo = () => {
   const managerData = [
@@ -48,20 +48,7 @@ const CleaningManagerInfo = () => {
       <Table variant="simple">
         <Thead>
           <Tr>
-            <Th>사진</Th>
-            <Th>이름</Th>
-            <Th>연락처</Th>
-            <Th>이메일</Th>
-            <Th>주소</Th>
-            <Th>생년월일</Th>
-            <Th>성별</Th>
-            <Th>경력</Th>
-            <Th>선호분야</Th>
-            <Th>기타경험</Th>
-            <Th>자기소개</Th>
-            <Th>특기/강점</Th>
-            <Th>희망시간</Th>
-            <Th>희망지역</Th>
+            <Th>청소 관리자 정보</Th>
             <Th>액션</Th>
           </Tr>
         </Thead>
@@ -69,21 +56,13 @@ const CleaningManagerInfo = () => {
           {managerData.map((manager) => (
             <Tr key={manager.id}>
               <Td>
-                <Image src={manager.profilePicture} alt="Profile" boxSize="60px" objectFit="cover" borderRadius="full" />
+                <Flex alignItems="center">
+                  <Image src={manager.profilePicture} alt="Profile" boxSize="60px" objectFit="cover" borderRadius="full" mr={4} />
+                  <Box>
+                    <strong>{manager.name}</strong> | {manager.phone} | {manager.email} | {manager.address} | {new Date(manager.dateOfBirth).toLocaleDateString()} | {manager.gender} | {manager.experience} | {manager.preferredField} | {manager.otherExperience} | {manager.introduction} | {manager.strengths} | {manager.preferredWorkingHours} | {manager.preferredArea}
+                  </Box>
+                </Flex>
               </Td>
-              <Td>{manager.name}</Td>
-              <Td>{manager.phone}</Td>
-              <Td>{manager.email}</Td>
-              <Td>{manager.address}</Td>
-              <Td>{new Date(manager.dateOfBirth).toLocaleDateString()}</Td>
-              <Td>{manager.gender}</Td>
-              <Td>{manager.experience}</Td>
-              <Td>{manager.preferredField}</Td>
-              <Td>{manager.otherExperience}</Td>
-              <Td>{manager.introduction}</Td>
-              <Td>{manager.strengths}</Td>
-              <Td>{manager.preferredWorkingHours}</Td>
-              <Td>{manager.preferredArea}</Td>
               <Td>
                 <Button size="sm" mr={2}>
                   Edit
