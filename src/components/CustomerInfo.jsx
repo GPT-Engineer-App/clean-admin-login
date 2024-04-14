@@ -3,8 +3,8 @@ import { Box, Table, Thead, Tbody, Tr, Th, Td, Button } from "@chakra-ui/react";
 
 const CustomerInfo = () => {
   const customerData = [
-    { id: 1, name: "John Doe", email: "john@example.com", phone: "1234567890" },
-    { id: 2, name: "Jane Smith", email: "jane@example.com", phone: "9876543210" },
+    { id: 1, name: "John Doe", phone: "1234567890", email: "john@example.com", address: "123 Main St" },
+    { id: 2, name: "Jane Smith", phone: "9876543210", email: "jane@example.com", address: "456 Park Ave" },
   ];
 
   return (
@@ -13,8 +13,9 @@ const CustomerInfo = () => {
         <Thead>
           <Tr>
             <Th>이름</Th>
+            <Th>연락처</Th>
             <Th>이메일</Th>
-            <Th>전화번호</Th>
+            <Th>주소</Th>
             <Th>액션</Th>
           </Tr>
         </Thead>
@@ -22,8 +23,9 @@ const CustomerInfo = () => {
           {customerData.map((customer) => (
             <Tr key={customer.id}>
               <Td>{customer.name}</Td>
-              <Td>{customer.email}</Td>
               <Td>{customer.phone}</Td>
+              <Td>{customer.email}</Td>
+              <Td>{customer.address}</Td>
               <Td>
                 <Button size="sm" mr={2}>
                   Edit
