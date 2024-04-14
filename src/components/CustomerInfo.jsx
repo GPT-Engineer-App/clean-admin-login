@@ -1,22 +1,21 @@
-import React from 'react';
-import { Box, Table, Thead, Tbody, Tr, Th, Td, Button } from '@chakra-ui/react';
+import React from "react";
+import { Box, Table, Thead, Tbody, Tr, Th, Td, Button } from "@chakra-ui/react";
 
 const CustomerInfo = () => {
- 
   const customerData = [
-    { id: 1, name: 'John Doe', email: 'john@example.com', phone: '1234567890' },
-    { id: 2, name: 'Jane Smith', email: 'jane@example.com', phone: '9876543210' },
+    { id: 1, name: "John Doe", email: "john@example.com", phone: "1234567890" },
+    { id: 2, name: "Jane Smith", email: "jane@example.com", phone: "9876543210" },
   ];
 
   return (
     <Box>
-      <Table variant='simple'>
+      <Table variant="simple">
         <Thead>
           <Tr>
-            <Th>Name</Th>
-            <Th>Email</Th>
-            <Th>Phone</Th>
-            <Th>Actions</Th>
+            <Th>이름</Th>
+            <Th>이메일</Th>
+            <Th>전화번호</Th>
+            <Th>액션</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -26,8 +25,10 @@ const CustomerInfo = () => {
               <Td>{customer.email}</Td>
               <Td>{customer.phone}</Td>
               <Td>
-                <Button size='sm' mr={2}>Edit</Button>
-                <Button size='sm'>Delete</Button>
+                <Button size="sm" mr={2}>
+                  Edit
+                </Button>
+                <Button size="sm">Delete</Button>
               </Td>
             </Tr>
           ))}

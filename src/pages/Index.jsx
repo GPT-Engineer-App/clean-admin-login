@@ -28,20 +28,20 @@ const Index = () => {
       <Box p={8} maxWidth="500px" borderWidth={1} borderRadius={8} boxShadow="lg">
         <Box textAlign="center">
           <Image src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxjbGVhbmluZyUyMGNvbXBhbnklMjBsb2dvfGVufDB8fHx8MTcxMzEwMDI0MXww&ixlib=rb-4.0.3&q=80&w=1080" alt="Logo" mb={4} />
-          <Heading>나청소 관리자 로그인</Heading>
+          <Heading>Cleaning Company Admin Login</Heading>
         </Box>
         <Box my={4} textAlign="left">
           <form onSubmit={handleLogin}>
             <FormControl isRequired>
-              <FormLabel>아이디</FormLabel>
-              <Input type="text" placeholder="아이디를 입력하세요" value={username} onChange={(event) => setUsername(event.currentTarget.value)} />
+              <FormLabel>Username</FormLabel>
+              <Input type="text" placeholder="Enter username" value={username} onChange={(event) => setUsername(event.currentTarget.value)} />
             </FormControl>
             <FormControl isRequired mt={6}>
-              <FormLabel>비밀번호</FormLabel>
-              <Input type="password" placeholder="비밀번호를 입력하세요" value={password} onChange={(event) => setPassword(event.currentTarget.value)} />
+              <FormLabel>Password</FormLabel>
+              <Input type="password" placeholder="Enter password" value={password} onChange={(event) => setPassword(event.currentTarget.value)} />
             </FormControl>
             <Button width="full" mt={4} type="submit" colorScheme="blue">
-              로그인
+              Login
             </Button>
           </form>
         </Box>

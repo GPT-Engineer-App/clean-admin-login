@@ -1,22 +1,21 @@
-import React from 'react';
-import { Box, Table, Thead, Tbody, Tr, Th, Td } from '@chakra-ui/react';
+import React from "react";
+import { Box, Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react";
 
 const ReservationInfo = () => {
- 
   const reservationData = [
-    { id: 1, customerName: 'John Doe', date: '2023-06-01', time: '10:00 AM', status: 'Confirmed' },
-    { id: 2, customerName: 'Jane Smith', date: '2023-06-02', time: '11:30 AM', status: 'Pending' },
+    { id: 1, customerName: "John Doe", date: "2023-06-01", time: "10:00 AM", status: "Confirmed" },
+    { id: 2, customerName: "Jane Smith", date: "2023-06-02", time: "11:30 AM", status: "Pending" },
   ];
 
   return (
     <Box>
-      <Table variant='simple'>
+      <Table variant="simple">
         <Thead>
           <Tr>
-            <Th>Customer</Th>
-            <Th>Date</Th>
-            <Th>Time</Th>
-            <Th>Status</Th>
+            <Th>고객</Th>
+            <Th>날짜</Th>
+            <Th>시간</Th>
+            <Th>상태</Th>
           </Tr>
         </Thead>
         <Tbody>

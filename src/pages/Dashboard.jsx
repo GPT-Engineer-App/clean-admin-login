@@ -20,11 +20,11 @@ const Dashboard = () => {
       <Heading mb={4}>Admin Dashboard</Heading>
       <Tabs>
         <TabList>
-          <Tab>Home</Tab>
-          <Tab>Customer Info</Tab>
-          <Tab>Cleaning Manager Info</Tab>
-          <Tab>Reservation Info</Tab>
-          <Tab>Payment Info</Tab>
+          <Tab>홈</Tab>
+          <Tab>고객 정보</Tab>
+          <Tab>청소 관리자 정보</Tab>
+          <Tab>예약 정보</Tab>
+          <Tab>결제 정보</Tab>
         </TabList>
 
         <TabPanels>
