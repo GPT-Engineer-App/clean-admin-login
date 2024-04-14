@@ -19,7 +19,7 @@ const Dashboard = () => {
   return (
     <Box p={4}>
       <Heading mb={4}>Admin Dashboard</Heading>
-      <Tabs>
+      <Tabs defaultIndex={0}>
         <TabList>
           <Tab>
             <Icon as={FaHome} mr={2} />
