@@ -21,6 +21,7 @@ const CleaningManagerInfo = () => {
       preferredWorkingHours: "9AM - 5PM",
       preferredArea: "Area 1",
       profilePicture: "https://example.com/profile1.jpg",
+      chargingAmount: 10000,
     },
     {
       id: 2,
@@ -40,6 +41,7 @@ const CleaningManagerInfo = () => {
       preferredWorkingHours: "10AM - 6PM",
       preferredArea: "Area 2",
       profilePicture: "https://example.com/profile2.jpg",
+      chargingAmount: 15000,
     },
   ];
 
@@ -62,6 +64,7 @@ const CleaningManagerInfo = () => {
             <Th>특기/강점</Th>
             <Th>희망시간</Th>
             <Th>희망지역</Th>
+            <Th>충전금액</Th>
             <Th>액션</Th>
           </Tr>
         </Thead>
@@ -84,6 +87,7 @@ const CleaningManagerInfo = () => {
               <Td>{manager.strengths}</Td>
               <Td>{manager.preferredWorkingHours}</Td>
               <Td>{manager.preferredArea}</Td>
+              <Td>{manager.chargingAmount}</Td>
               <Td>
                 <Button size="sm" mr={2}>
                   Edit
