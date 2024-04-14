@@ -1,5 +1,7 @@
 import React from "react";
-import { Box, Stat, StatLabel, StatNumber, SimpleGrid, Heading, Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react";
+import { Box, Stat, StatLabel, StatNumber, SimpleGrid, Heading } from "@chakra-ui/react";
+import SalesChart from "./SalesChart";
+import ServiceTypeChart from "./ServiceTypeChart";
 
 const DashboardHome = () => {
   const salesData = [
@@ -9,6 +11,13 @@ const DashboardHome = () => {
     { month: "Apr", sales: 1250 },
     { month: "May", sales: 1500 },
     { month: "Jun", sales: 2000 },
+  ];
+
+  const serviceTypeData = [
+    { name: "House Cleaning", value: 400 },
+    { name: "Office Cleaning", value: 300 },
+    { name: "Carpet Cleaning", value: 200 },
+    { name: "Window Cleaning", value: 100 },
   ];
 
   return (
@@ -38,22 +47,14 @@ const DashboardHome = () => {
         <Heading size="lg" mb={4}>
           Monthly Sales
         </Heading>
-        <Table variant="simple">
-          <Thead>
-            <Tr>
-              <Th>Month</Th>
-              <Th isNumeric>Sales</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {salesData.map((data, index) => (
-              <Tr key={index}>
-                <Td>{data.month}</Td>
-                <Td isNumeric>${data.sales}</Td>
-              </Tr>
-            ))}
-          </Tbody>
-        </Table>
+        <SalesChart data={salesData} />
+      </Box>
+
+      <Box bg="white" p={6} rounded="lg" boxShadow="md">
+        <Heading size="lg" mb={4}>
+          Service Type Distribution
+        </Heading>
+        <ServiceTypeChart data={serviceTypeData} />
       </Box>
     </Box>
   );
