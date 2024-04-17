@@ -18,28 +18,27 @@ const Dashboard = () => {
 
   return (
     <Box p={4}>
-      <Heading mb={4}>Admin Dashboard</Heading>
+      <Heading mb={4}>관리자 대시보드</Heading>
       <Tabs defaultIndex={0}>
         <TabList>
           <Tab>
-            <Icon as={FaHome} mr={2} />
-            Home
+            <Icon as={FaHome} mr={2} />홈
           </Tab>
           <Tab>
             <Icon as={FaUsers} mr={2} />
-            Customer Info
+            고객 정보
           </Tab>
           <Tab>
             <Icon as={FaUserTie} mr={2} />
-            Cleaning Manager Info
+            청소 관리자 정보
           </Tab>
           <Tab>
             <Icon as={FaCalendarAlt} mr={2} />
-            Reservation Info
+            예약 정보
           </Tab>
           <Tab>
             <Icon as={FaMoneyBillWave} mr={2} />
-            Payment Info
+            결제 정보
           </Tab>
         </TabList>
 
