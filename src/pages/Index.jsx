@@ -11,28 +11,16 @@ const Index = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const correctUsername = "admin";
-    const correctPassword = "admin123";
 
-    if (username === correctUsername && password === correctPassword) {
-      localStorage.setItem("isAuthenticated", true);
-      toast({
-        title: "로그인 성공",
-        description: "관리자 페이지로 이동합니다.",
-        status: "success",
-        duration: 3000,
-        isClosable: true,
-      });
-      navigate("/dashboard");
-    } else {
-      toast({
-        title: "로그인 실패",
-        description: "잘못된 사용자 이름 또는 비밀번호입니다.",
-        status: "error",
-        duration: 3000,
-        isClosable: true,
-      });
-    }
+    localStorage.setItem("isAuthenticated", true);
+    toast({
+      title: "로그인 성공",
+      description: "관리자 페이지로 이동합니다.",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+    });
+    navigate("/dashboard");
   };
 
   return (
