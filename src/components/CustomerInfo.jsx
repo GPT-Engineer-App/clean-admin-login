@@ -1,23 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Box, Table, Thead, Tbody, Tr, Th, Td, Button, Spinner, Alert, AlertIcon } from "@chakra-ui/react";
+import React from "react";
+import { Box, Table, Thead, Tbody, Tr, Th, Td, Button } from "@chakra-ui/react";
 
 const CustomerInfo = () => {
-  const [customers, setCustomers] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetch("http://example.com/api/customers")
-      .then((response) => response.json())
-      .then((data) => {
-        setCustomers(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError("Failed to fetch data: " + error.message);
-        setLoading(false);
-      });
-  }, []);
+  const customerData = [
+    { id: 1, name: "John Doe", phone: "1234567890", email: "john@example.com", address: "123 Main St" },
+    { id: 2, name: "Jane Smith", phone: "9876543210", email: "jane@example.com", address: "456 Park Ave" },
+  ];
 
   return (
     <Box>
@@ -32,37 +20,20 @@ const CustomerInfo = () => {
           </Tr>
         </Thead>
         <Tbody>
-          {loading ? (
-            <Tr>
-              <Td colSpan={5}>
-                <Spinner />
+          {customerData.map((customer) => (
+            <Tr key={customer.id}>
+              <Td>{customer.name}</Td>
+              <Td>{customer.phone}</Td>
+              <Td>{customer.email}</Td>
+              <Td>{customer.address}</Td>
+              <Td>
+                <Button size="sm" mr={2}>
+                  Edit
+                </Button>
+                <Button size="sm">Delete</Button>
               </Td>
             </Tr>
-          ) : error ? (
-            <Tr>
-              <Td colSpan={5}>
-                <Alert status="error">
-                  <AlertIcon />
-                  There was an error processing your request: {error}
-                </Alert>
-              </Td>
-            </Tr>
-          ) : (
-            customers.map((customer) => (
-              <Tr key={customer.id}>
-                <Td>{customer.name}</Td>
-                <Td>{customer.phone}</Td>
-                <Td>{customer.email}</Td>
-                <Td>{customer.address}</Td>
-                <Td>
-                  <Button size="sm" mr={2}>
-                    Edit
-                  </Button>
-                  <Button size="sm">Delete</Button>
-                </Td>
-              </Tr>
-            ))
-          )}
+          ))}
         </Tbody>
       </Table>
     </Box>
